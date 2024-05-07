@@ -1,3 +1,9 @@
+<? 
+
+    $array = [['potato', 'cocroach'], ['smasher', 'eater']]; 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +18,7 @@
     <div class="w-full h-screen flex items-center justify-center">
 
         <!-- Generator block -->
-        <div class="w-2/5 p-6 bg-base-300 rounded-box border-2 border-primary">
+        <div class="min-w-96 p-6 bg-base-300 rounded-box border-2 border-primary">
             <div class="flex items-center justify-between">
                 <h3 class="font-bold text-2xl">Генератор никнеймов</h3>
                 <a class="link underline-offset-2 text-xs" href="https://github.com/TheLastCookie-404" target="_blank">By TheLastCocke</a>
@@ -23,6 +29,7 @@
                     <span class="label-text">Your nickname</span>
                 </div>
                 <textarea
+                    id="nameOutput"
                     class="textarea textarea-bordered bg-base-200 caret-primary selection:bg-primary selection:text-base-300 h-32"
                     placeholder="Press Generate button"></textarea>
             </label>
@@ -59,10 +66,18 @@
                 </div>
             </div>
             <div class="divider"></div>
-            <button class="btn btn-active btn-primary w-full">Generate</button>
+            <div class="btn btn-active btn-primary w-full" onclick="DisplayNickname('nameOutput');">Generate</div>
         </div>
-
     </div>
+
+    <script src="./scripts/main.js"></script>
+    <script>
+        let arr = <?= json_encode($array); ?>;
+        function DisplayNickname(outputId) {
+            let nameOutput = document.getElementById(outputId);
+            nameOutput.textContent = CreateNickname(arr);
+        }
+    </script>
 </body>
 
 </html>
