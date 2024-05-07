@@ -1,12 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../tailwind/output.css">
-        <title>Document</title>
-    </head>
-    <body>
-        <div class="w-52 h-40 outline outline-1 outline-red-600"></div>
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../tailwind/output.css">
+    <title>Document</title>
+</head>
+
+<body data-theme="theme-controller">
+    <div class="w-full h-screen flex items-center justify-center">
+        <div class="w-2/5 p-6 bg-base-300 rounded-box border-2 border-primary">
+            <div class="flex items-center justify-between">
+                <h3 class="font-bold text-2xl">Генератор никнеймов</h3>
+                <a class="link underline-offset-2" href="https://github.com/TheLastCookie-404" target="_blank">By TheLastCocke</a>
+            </div>
+            <div class="divider"></div>
+            <label class="form-control">
+                <div class="label">
+                    <span class="label-text">Your nickname</span>
+                </div>
+                <textarea
+                    class="textarea textarea-bordered bg-base-200 caret-primary selection:bg-primary selection:text-base-300 h-32"
+                    placeholder="Press Generate button"></textarea>
+            </label>
+            <div class="flex gap-5">
+                <div class="form-control">
+                    <label class="label cursor-pointer gap-4">
+                        <input type="radio" name="theme-radios" class="radio theme-controller" value="daRK" />
+                        <span class="label-text">Valentine</span>
+                    </label>
+                </div>
+                <div class="form-control">
+                    <label class="label cursor-pointer gap-4">
+                        <input type="radio" name="theme-radios" class="radio theme-controller" value="halloween"/>
+                        <span class="label-text">Halloween</span>
+                    </label>
+                </div>
+                <div class="form-control">
+                    <label class="label cursor-pointer gap-4">
+                        <input type="radio" name="theme-radios" class="radio theme-controller" value="retro" />
+                        <span class="label-text">Retro</span>
+                    </label>
+                </div>
+                <div class="form-control">
+                    <label class="label cursor-pointer gap-4">
+                        <input type="radio" name="theme-radios" class="radio theme-controller" value="cyberpunk" />
+                        <span class="label-text">Cyberpunk</span>
+                    </label>
+                </div>
+                <div class="form-control">
+                    <label class="label cursor-pointer gap-4">
+                        <input type="radio" name="theme-radios" class="radio theme-controller" value="aqua" />
+                        <span class="label-text">Aqua</span>
+                    </label>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <button class="btn btn-active btn-primary">Generate</button>
+        </div>
+    </div>
+</body>
+
 </html>
