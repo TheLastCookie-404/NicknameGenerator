@@ -1,1 +1,1 @@
-# -NicknameGenerator
+# NicknameGenerator
