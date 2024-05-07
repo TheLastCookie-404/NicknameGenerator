@@ -1,6 +1,6 @@
 <? 
-
-    $array = [['potato', 'cocroach'], ['smasher', 'eater']]; 
+    require "DB-CONNECT/connect.php";
+    $words = [$subjects, $predicates];
 
 ?>
 
@@ -72,10 +72,11 @@
 
     <script src="./scripts/main.js"></script>
     <script>
-        let arr = <?= json_encode($array); ?>;
+        let words = <?= json_encode($words); ?>;
+        let tableCell = 1;
         function DisplayNickname(outputId) {
             let nameOutput = document.getElementById(outputId);
-            nameOutput.textContent = CreateNickname(arr);
+            nameOutput.textContent = CreateNickname(words, tableCell);
         }
     </script>
 </body>
