@@ -1,7 +1,9 @@
-<?
+<?php
     require "DB-CONNECT/connect.php";
     $words = [$subjects, $predicates];
-    var_dump($_POST)
+    // echo "<pre>";
+    // var_dump($_POST);
+    // echo "</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +26,7 @@
                 <a class="link underline-offset-2 text-xs" href="https://github.com/TheLastCookie-404" target="_blank">By TheLastCocke</a>
             </div>
             <div class="divider"></div>
-            <form action="" method="post">
+            <form id="form1" action="" method="post">
                 <label class="form-control">
                     <div class="label">
                         <span class="label-text">Enter subjects</span>
@@ -32,7 +34,7 @@
                     </div>
                     <textarea
                         class="textarea textarea-bordered bg-base-200 h-24"
-                        name="subjects"
+                        name="enteredSubjects"
                         placeholder="Type here"></textarea>
                     <div class="collapse rounded-none">
                         <input type="checkbox" />
@@ -44,14 +46,15 @@
                                 <? foreach($subjects as $subject) { ?>
                                     <div class="flex justify-between px-3">
                                         <p><?= $subject[1] ?></p>
-                                        <input type="checkbox" class="checkbox checkbox-sm checkbox-primary" />
+                                        <input name="selectedSubjects[]" value="<?= $subject[0] ?>" type="checkbox" class="checkbox checkbox-sm checkbox-primary" />
                                     </div>
                                     <div class="divider my-2"></div>
                                 <? } ?>
                             </div>
                             <div class="flex justify-start gap-3">
-                                <a href="" class="btn btn-sm btn-error">DELETE</a>
-                                <a href="" class="btn btn-sm btn-success">EDIT</a>
+                                <div onclick="Btn('form1', 'formSubmit', 'oklch(var(--er))', 'DELETE SELECTED WORDS')" class="btn btn-sm btn-error">DELETE</div>
+                                <div onclick="Btn('form1', 'formSubmit', 'oklch(var(--p))', 'SEND'); AllCheckboxesDisable();" class="btn btn-sm btn-warning">CANCEL</div>
+                                <div onclick="Btn('form1', 'formSubmit', 'oklch(var(--su))', 'EDIT SELECTED WORDS')"class="btn btn-sm btn-success">EDIT</div>
                             </div>
                         </div>
                     </div>
@@ -63,18 +66,28 @@
                     </div>
                     <textarea
                         class="textarea textarea-bordered bg-base-200 h-24"
-                        name="predicates"
+                        name="enteredPredicates"
                         placeholder="Type here"></textarea>
                     <div class="collapse rounded-none">
                         <input type="checkbox" /> 
                         <div class="collapse-title text-sm font-medium pl-1 flex items-center">
                             Click me to show PREDICATES 
                         </div>
-                        <div class="collapse-content pl-1 max-h-56 overflow-y-scroll"> 
-                            <? foreach($predicates as $predicate) { ?>
-                                <p><?= $predicate[1] ?></p>
-                                <div class="divider my-2"></div>
-                            <? } ?>
+                        <div class="collapse-content px-1"> 
+                            <div class="max-h-56 overflow-y-scroll mb-4">
+                                <? foreach($predicates as $predicate) { ?>
+                                    <div class="flex justify-between px-3">
+                                        <p><?= $predicate[1] ?></p>
+                                        <input name="selectedPredicates[]" value="<?= $predicate[0] ?>" type="checkbox" class="checkbox checkbox-sm checkbox-primary" />
+                                    </div>
+                                    <div class="divider my-2"></div>
+                                <? } ?>
+                            </div>
+                            <div class="flex justify-start gap-3">
+                                <div onclick="Btn('form1', 'formSubmit', 'oklch(var(--er))', 'DELETE SELECTED WORDS')" class="btn btn-sm btn-error">DELETE</div>
+                                <div onclick="Btn('form1', 'formSubmit', 'oklch(var(--p))', 'SEND'); AllCheckboxesDisable();" class="btn btn-sm btn-warning">CANCEL</div>
+                                <div onclick="Btn('form1', 'formSubmit', 'oklch(var(--su))', 'EDIT SELECTED WORDS')"class="btn btn-sm btn-success">EDIT</div>
+                            </div>
                         </div>
                     </div>
                 </label>
@@ -111,10 +124,11 @@
                     </div>
                 </div>
                 <div class="divider"></div>
-                <input type="submit" value="Send" class="btn btn-active btn-primary w-full">
+                <input id="formSubmit" type="submit" value="SEND" class="btn btn-active btn-primary w-full">
             </form>
         </div>
     </div>
+    <script src="./scripts/main.js"></script>
 </body>
 
 </html>

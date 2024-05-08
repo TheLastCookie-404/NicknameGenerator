@@ -7,3 +7,18 @@ function CreateNickname(array, tableCell){
     let secondWord = array[1][Random(0, (array[1].length))][tableCell];
     return `${firstWord} ${secondWord}`;
 }
+
+function Btn(formId, submitBtnId, submitBtnNewColor, submitBtnNewText){
+    form = document.getElementById(formId);
+    submitBtn = document.getElementById(submitBtnId);
+    submitBtn.style.backgroundColor = submitBtnNewColor;
+    submitBtn.style.borderColor = submitBtnNewColor;
+    submitBtn.value = submitBtnNewText;
+}
+
+function AllCheckboxesDisable(){
+    document.querySelectorAll('.checkbox').forEach(_checkbox=>{(_checkbox).checked = false;});
+}
+
+// Отрубать чекбоксы
+// 
