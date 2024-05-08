@@ -8,10 +8,4 @@ $subjects = mysqli_fetch_all($subjects);
 $predicates = mysqli_query($db, "SELECT * FROM `mypredicates`");
 $predicates = mysqli_fetch_all($predicates);
 
-echo "<pre>";
-var_dump($predicates);
-
-var_dump($subjects);
-echo "</pre>";
-
 
