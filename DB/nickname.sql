@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 07 2024 г., 20:53
+-- Время создания: Май 10 2024 г., 19:27
 -- Версия сервера: 5.7.39
 -- Версия PHP: 7.2.34
 
@@ -41,7 +41,28 @@ INSERT INTO `mypredicates` (`id`, `predicate`) VALUES
 (2, 'eater'),
 (3, 'destroyer'),
 (4, 'licker'),
-(5, 'incinerator');
+(5, 'incinerator'),
+(9, 'seaker'),
+(10, 'sniffer'),
+(11, 'player'),
+(12, 'knocker'),
+(13, 'painter'),
+(14, 'walker'),
+(15, 'hider'),
+(16, 'cooker'),
+(18, 'cleaner'),
+(19, 'scarer'),
+(20, 'rider'),
+(21, 'drinker'),
+(22, 'caresser'),
+(23, 'warmer'),
+(24, 'rotator'),
+(25, 'picker'),
+(26, 'planter'),
+(27, 'thinker'),
+(28, 'killer'),
+(29, 'caretaker'),
+(30, 'humiliator');
 
 -- --------------------------------------------------------
 
@@ -59,11 +80,30 @@ CREATE TABLE `mysubjects` (
 --
 
 INSERT INTO `mysubjects` (`id`, `subject`) VALUES
-(1, 'potato'),
-(2, 'cockroach'),
+(1, 'bean'),
+(2, 'electropea'),
 (3, 'candy'),
-(4, 'bean'),
-(5, 'electropea');
+(4, 'cockroach'),
+(5, 'potato'),
+(6, 'sweetypants'),
+(7, 'sausage'),
+(8, 'gippo'),
+(9, 'amogus'),
+(10, 'anonymous'),
+(11, 'grenade'),
+(12, 'catgirl'),
+(13, 'ghost'),
+(14, 'grainy'),
+(15, 'burger'),
+(16, 'shaurma'),
+(17, 'crocodile'),
+(18, 'dust'),
+(19, 'banana'),
+(20, 'rick'),
+(21, 'drunk'),
+(22, 'tomato'),
+(23, 'corn'),
+(24, 'dogboy');
 
 --
 -- Индексы сохранённых таблиц
@@ -89,13 +129,13 @@ ALTER TABLE `mysubjects`
 -- AUTO_INCREMENT для таблицы `mypredicates`
 --
 ALTER TABLE `mypredicates`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT для таблицы `mysubjects`
 --
 ALTER TABLE `mysubjects`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

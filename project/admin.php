@@ -12,7 +12,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../tailwind/output.css?v=1">
+    <link rel="stylesheet" href="../tailwind/output.css?v=2">
     <title>Document</title>
 </head>
 
@@ -38,8 +38,8 @@
                         placeholder="Type here"></textarea>
                     <div class="collapse rounded-none">
                         <input type="checkbox" />
-                        <div class="collapse-title text-sm font-medium px-1 py-3 flex items-center justify-between">
-                            Click me to show SUBJECTS
+                        <div class="collapse-title text-sm font-medium px-1 py-3 flex items-center">
+                            <span>Click me to show SUBJECTS: <span class="text-accent font-light"><?= count($subjects) ?></span></span>
                         </div>
                         <div class="collapse-content px-1">
                             <div class="max-h-56 overflow-y-scroll mb-4">
@@ -70,8 +70,8 @@
                         placeholder="Type here"></textarea>
                     <div class="collapse rounded-none">
                         <input type="checkbox" /> 
-                        <div class="collapse-title text-sm font-medium pl-1 flex items-center">
-                            Click me to show PREDICATES 
+                        <div class="collapse-title text-sm font-medium px-1 py-3 flex items-center">
+                            <span>Click me to show PREDICATES: <span class="text-accent font-light"><?= count($predicates) ?></span></span>
                         </div>
                         <div class="collapse-content px-1"> 
                             <div class="max-h-56 overflow-y-scroll mb-4">
