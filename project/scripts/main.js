@@ -8,17 +8,19 @@ function CreateNickname(array, tableCell){
     return `${firstWord} ${secondWord}`;
 }
 
-function Btn(formId, submitBtnId, submitBtnNewColor, submitBtnNewText){
+function Btn(formId, formAction, submitBtnId, submitBtnNewColor, submitBtnNewText){
     form = document.getElementById(formId);
     submitBtn = document.getElementById(submitBtnId);
     submitBtn.style.backgroundColor = submitBtnNewColor;
     submitBtn.style.borderColor = submitBtnNewColor;
     submitBtn.value = submitBtnNewText;
+    form.setAttribute('action', formAction);
 }
 
 function AllCheckboxesDisable(){
     document.querySelectorAll('.checkbox').forEach(_checkbox=>{(_checkbox).checked = false;});
 }
+
 
 // Отрубать чекбоксы
 // 

@@ -20,7 +20,7 @@
         <div class="min-w-96 p-6 bg-base-300 rounded-box border-2 border-primary selection:bg-primary selection:text-base-300">
             <div class="flex items-center justify-between">
                 <h3 class="font-bold text-2xl">Nicknamenator</h3>
-                <a class="link underline-offset-2 text-xs" href="https://github.com/TheLastCookie-404" target="_blank">By TheLastCocke</a>
+                <a class="link underline-offset-2 text-xs" href="https://github.com/TheLastCookie-404" target="_blank">By TheLastCookie</a>
             </div>
             <div class="divider"></div>
             <label class="form-control">

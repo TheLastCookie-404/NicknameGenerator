@@ -23,10 +23,10 @@
         <div class="min-w-96 p-6 bg-base-300 rounded-box border-2 border-primary selection:bg-primary selection:text-base-300 caret-primary">
             <div class="flex items-center justify-between">
                 <h3 class="font-bold text-2xl">Admin panel</h3>
-                <a class="link underline-offset-2 text-xs" href="https://github.com/TheLastCookie-404" target="_blank">By TheLastCocke</a>
+                <a class="link underline-offset-2 text-xs" href="https://github.com/TheLastCookie-404" target="_blank">By TheLastCookie</a>
             </div>
             <div class="divider"></div>
-            <form id="form1" action="" method="post">
+            <form id="form1" action="./DB-MANAGEMENT/load.php" method="post">
                 <label class="form-control">
                     <div class="label">
                         <span class="label-text">Enter subjects</span>
@@ -39,9 +39,9 @@
                     <div class="collapse rounded-none">
                         <input type="checkbox" />
                         <div class="collapse-title text-sm font-medium px-1 py-3 flex items-center justify-between">
-                            Click me to show SUBJECTS 
+                            Click me to show SUBJECTS
                         </div>
-                        <div class="collapse-content px-1"> 
+                        <div class="collapse-content px-1">
                             <div class="max-h-56 overflow-y-scroll mb-4">
                                 <? foreach($subjects as $subject) { ?>
                                     <div class="flex justify-between px-3">
@@ -52,9 +52,9 @@
                                 <? } ?>
                             </div>
                             <div class="flex justify-start gap-3">
-                                <div onclick="Btn('form1', 'formSubmit', 'oklch(var(--er))', 'DELETE SELECTED WORDS')" class="btn btn-sm btn-error">DELETE</div>
-                                <div onclick="Btn('form1', 'formSubmit', 'oklch(var(--p))', 'SEND'); AllCheckboxesDisable();" class="btn btn-sm btn-warning">CANCEL</div>
-                                <div onclick="Btn('form1', 'formSubmit', 'oklch(var(--su))', 'EDIT SELECTED WORDS')"class="btn btn-sm btn-success">EDIT</div>
+                                <div onclick="Btn('form1', './DB-MANAGEMENT/delete.php', 'formSubmit', 'oklch(var(--er))', 'DELETE SELECTED WORDS')" class="btn btn-sm btn-error">DELETE</div>
+                                <div onclick="Btn('form1', './DB-MANAGEMENT/load.php', 'formSubmit', 'oklch(var(--p))', 'SEND'); AllCheckboxesDisable();" class="btn btn-sm btn-warning">CANCEL</div>
+                                <div onclick="Btn('form1', './DB-MANAGEMENT/update.php', 'formSubmit', 'oklch(var(--su))', 'EDIT SELECTED WORDS')"class="btn btn-sm btn-success">EDIT</div>
                             </div>
                         </div>
                     </div>
@@ -84,9 +84,9 @@
                                 <? } ?>
                             </div>
                             <div class="flex justify-start gap-3">
-                                <div onclick="Btn('form1', 'formSubmit', 'oklch(var(--er))', 'DELETE SELECTED WORDS')" class="btn btn-sm btn-error">DELETE</div>
-                                <div onclick="Btn('form1', 'formSubmit', 'oklch(var(--p))', 'SEND'); AllCheckboxesDisable();" class="btn btn-sm btn-warning">CANCEL</div>
-                                <div onclick="Btn('form1', 'formSubmit', 'oklch(var(--su))', 'EDIT SELECTED WORDS')"class="btn btn-sm btn-success">EDIT</div>
+                                <div onclick="Btn('form1', './DB-MANAGEMENT/delete.php', 'formSubmit', 'oklch(var(--er))', 'DELETE SELECTED WORDS')" class="btn btn-sm btn-error">DELETE</div>
+                                <div onclick="Btn('form1', './DB-MANAGEMENT/load.php', 'formSubmit', 'oklch(var(--p))', 'SEND'); AllCheckboxesDisable();" class="btn btn-sm btn-warning">CANCEL</div>
+                                <div onclick="Btn('form1', './DB-MANAGEMENT/update.php', 'formSubmit', 'oklch(var(--su))', 'EDIT SELECTED WORDS')"class="btn btn-sm btn-success">EDIT</div>
                             </div>
                         </div>
                     </div>
