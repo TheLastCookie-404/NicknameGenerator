@@ -21,11 +21,3 @@ DeleteSelectedById($db, 'mysubjects', 'id', $selectedSubjects);
 DeleteSelectedById($db, 'mypredicates', 'id', $selectedPredicates);
 
 header("location: ../admin.php");
-
-
-
-// if($selectedSubjects != null){
-//     foreach($selectedSubjects as $selectedSubject){
-//         mysqli_query($db, "DELETE FROM `mysubjects` WHERE `mysubjects`.`id` = '$selectedSubject';");
-//     }
-// }
