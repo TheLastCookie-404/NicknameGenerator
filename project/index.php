@@ -1,6 +1,6 @@
-<?
+<?php
     require "DB-CONNECT/connect.php";
-    $words = [$subjects, $predicates];
+    // $words = [$subjects, $predicates]; - now in connect.php
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +71,7 @@
 
     <script src="./scripts/main.js"></script>
     <script>
-        let words = <?= json_encode($words); ?>;
+        // words variable now in connect.php
         let tableCell = 1;
         function DisplayNickname(outputId) {
             let nameOutput = document.getElementById(outputId);

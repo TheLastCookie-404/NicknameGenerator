@@ -1,4 +1,5 @@
 <?php
+
 require "../DB-CONNECT/connect.php";
 
 $subjects = $_POST['enteredSubjects'];

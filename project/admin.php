@@ -1,6 +1,6 @@
 <?php
     require "DB-CONNECT/connect.php";
-    $words = [$subjects, $predicates];
+    // $words = [$subjects, $predicates]; - now in connect.php
     // echo "<pre>";
     // var_dump($_POST);
     // echo "</pre>";
@@ -33,20 +33,21 @@
                         <span class="label-text-alt">use spaces with several words</span>
                     </div>
                     <textarea
+                        id="subjectsTxtArea"
                         class="textarea textarea-bordered bg-base-200 h-24"
                         name="enteredSubjects"
                         placeholder="Type here"></textarea>
                     <div class="collapse rounded-none">
                         <input type="checkbox" />
                         <div class="collapse-title text-sm font-medium px-1 py-3 flex items-center">
-                            <span>Click me to show SUBJECTS: <span class="text-accent font-light"><?= count($subjects) ?></span></span>
+                            <span>Click me to show SUBJECTS: <span class="text-success font-light"><?= count($subjects) ?></span></span>
                         </div>
                         <div class="collapse-content px-1">
                             <div class="max-h-56 overflow-y-scroll mb-4">
                                 <? foreach($subjects as $subject) { ?>
                                     <div class="flex justify-between px-3">
                                         <p><?= $subject[1] ?></p>
-                                        <input name="selectedSubjects[]" value="<?= $subject[0] ?>" type="checkbox" class="checkbox checkbox-sm checkbox-primary" />
+                                        <input name="selectedSubjects[]" value="<?= $subject[0] ?>" type="checkbox" class="checkbox checkbox-sm checkbox-primary subjCheck" />
                                     </div>
                                     <div class="divider my-2"></div>
                                 <? } ?>
@@ -54,31 +55,31 @@
                             <div class="flex justify-start gap-3">
                                 <div onclick="Btn('form1', './DB-MANAGEMENT/delete.php', 'formSubmit', 'oklch(var(--er))', 'DELETE SELECTED WORDS')" class="btn btn-sm btn-error">DELETE</div>
                                 <div onclick="Btn('form1', './DB-MANAGEMENT/load.php', 'formSubmit', 'oklch(var(--p))', 'SEND'); AllCheckboxesDisable();" class="btn btn-sm btn-warning">CANCEL</div>
-                                <div onclick="Btn('form1', './DB-MANAGEMENT/update.php', 'formSubmit', 'oklch(var(--su))', 'EDIT SELECTED WORDS')"class="btn btn-sm btn-success">EDIT</div>
+                                <div onclick="Btn('form1', './DB-MANAGEMENT/update.php', 'formSubmit', 'oklch(var(--su))', 'EDIT SELECTED WORDS'); DisplaySelectedWords(words[0], 1, 'subjectsTxtArea', 'subjCheck')"class="btn btn-sm btn-success">EDIT</div>
                             </div>
                         </div>
                     </div>
-                </label>
                 <label class="form-control">
                     <div class="label">
                         <span class="label-text">Enter predicates</span>
                         <span class="label-text-alt">use spaces with several words</span>
                     </div>
                     <textarea
+                        id="predicatesTxtArea"
                         class="textarea textarea-bordered bg-base-200 h-24"
                         name="enteredPredicates"
                         placeholder="Type here"></textarea>
                     <div class="collapse rounded-none">
                         <input type="checkbox" /> 
                         <div class="collapse-title text-sm font-medium px-1 py-3 flex items-center">
-                            <span>Click me to show PREDICATES: <span class="text-accent font-light"><?= count($predicates) ?></span></span>
+                            <span>Click me to show PREDICATES: <span class="text-success font-light"><?= count($predicates) ?></span></span>
                         </div>
                         <div class="collapse-content px-1"> 
                             <div class="max-h-56 overflow-y-scroll mb-4">
                                 <? foreach($predicates as $predicate) { ?>
                                     <div class="flex justify-between px-3">
                                         <p><?= $predicate[1] ?></p>
-                                        <input name="selectedPredicates[]" value="<?= $predicate[0] ?>" type="checkbox" class="checkbox checkbox-sm checkbox-primary" />
+                                        <input name="selectedPredicates[]" value="<?= $predicate[0] ?>" type="checkbox" class="checkbox checkbox-sm checkbox-primary predCheck" />
                                     </div>
                                     <div class="divider my-2"></div>
                                 <? } ?>
@@ -86,7 +87,7 @@
                             <div class="flex justify-start gap-3">
                                 <div onclick="Btn('form1', './DB-MANAGEMENT/delete.php', 'formSubmit', 'oklch(var(--er))', 'DELETE SELECTED WORDS')" class="btn btn-sm btn-error">DELETE</div>
                                 <div onclick="Btn('form1', './DB-MANAGEMENT/load.php', 'formSubmit', 'oklch(var(--p))', 'SEND'); AllCheckboxesDisable();" class="btn btn-sm btn-warning">CANCEL</div>
-                                <div onclick="Btn('form1', './DB-MANAGEMENT/update.php', 'formSubmit', 'oklch(var(--su))', 'EDIT SELECTED WORDS')"class="btn btn-sm btn-success">EDIT</div>
+                                <div onclick="Btn('form1', './DB-MANAGEMENT/update.php', 'formSubmit', 'oklch(var(--su))', 'EDIT SELECTED WORDS'); DisplaySelectedWords(words[1], 1, 'predicatesTxtArea', 'predCheck');"class="btn btn-sm btn-success">EDIT</div>
                             </div>
                         </div>
                     </div>

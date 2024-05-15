@@ -21,6 +21,35 @@ function AllCheckboxesDisable(){
     document.querySelectorAll('.checkbox').forEach(_checkbox=>{(_checkbox).checked = false;});
 }
 
+function DisplaySelectedWords(array, tableCell, outputId, checkboxClass){
+    let str = "";
+    let checkboxes = document.getElementsByClassName(checkboxClass);
+    output = document.getElementById(outputId);
+    output.value = str;
+    
+    console.log(checkboxes);
+    document.querySelectorAll(`.${checkboxClass}`).forEach(_checkbox=>{
+        if((_checkbox).checked == true){
+            array.forEach(_arrelem=>{
+                if(_arrelem[0] == _checkbox.value){
+                    str += `${_arrelem[tableCell]} `;
+                }
+            });
+        }
+    });
 
-// Отрубать чекбоксы
-// 
+    output.value = str;
+}
+
+
+
+
+// checkboxes.forEach(_checkbox=>{
+//     if((_checkbox).checked == true){
+//         array.forEach(_arrelem=>{
+//             if(_arrelem[0] == _checkbox.value){
+//                 str += `${_arrelem[tableCell]} `;
+//             }
+//         });
+//     }
+// });
