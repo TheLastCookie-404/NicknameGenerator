@@ -47,15 +47,15 @@
                                 <? foreach($subjects as $subject) { ?>
                                     <div class="flex justify-between px-3">
                                         <p><?= $subject[1] ?></p>
-                                        <input name="selectedSubjects[]" value="<?= $subject[0] ?>" type="checkbox" class="checkbox checkbox-sm checkbox-primary subjCheck" />
+                                        <input name="selectedSubjects[]" value="<?= $subject[0] ?>" type="checkbox" class="checkbox checkbox-sm checkbox-primary subjCheck" onclick="DisplaySelectedWords(words[0], 1, 'subjectsTxtArea', 'subjCheck');"/>
                                     </div>
                                     <div class="divider my-2"></div>
                                 <? } ?>
                             </div>
                             <div class="flex justify-start gap-3">
-                                <div onclick="Btn('form1', './DB-MANAGEMENT/delete.php', 'formSubmit', 'oklch(var(--er))', 'DELETE SELECTED WORDS')" class="btn btn-sm btn-error">DELETE</div>
-                                <div onclick="Btn('form1', './DB-MANAGEMENT/load.php', 'formSubmit', 'oklch(var(--p))', 'SEND'); AllCheckboxesDisable();" class="btn btn-sm btn-warning">CANCEL</div>
-                                <div onclick="Btn('form1', './DB-MANAGEMENT/update.php', 'formSubmit', 'oklch(var(--su))', 'EDIT SELECTED WORDS'); DisplaySelectedWords(words[0], 1, 'subjectsTxtArea', 'subjCheck')"class="btn btn-sm btn-success">EDIT</div>
+                                <div onclick="Btn('form1', './DB-MANAGEMENT/delete.php', 'formSubmit', 'oklch(var(--er))', 'DELETE SELECTED WORDS');" class="btn btn-sm btn-error">DELETE</div>
+                                <div onclick="Btn('form1', './DB-MANAGEMENT/load.php', 'formSubmit', 'oklch(var(--p))', 'SEND'); AllCheckboxesDisable(); HideSelectedWords('subjectsTxtArea');" class="btn btn-sm btn-warning">CANCEL</div>
+                                <div onclick="Btn('form1', './DB-MANAGEMENT/update.php', 'formSubmit', 'oklch(var(--su))', 'EDIT SELECTED WORDS');"class="btn btn-sm btn-success">EDIT</div>
                             </div>
                         </div>
                     </div>
@@ -85,8 +85,8 @@
                                 <? } ?>
                             </div>
                             <div class="flex justify-start gap-3">
-                                <div onclick="Btn('form1', './DB-MANAGEMENT/delete.php', 'formSubmit', 'oklch(var(--er))', 'DELETE SELECTED WORDS')" class="btn btn-sm btn-error">DELETE</div>
-                                <div onclick="Btn('form1', './DB-MANAGEMENT/load.php', 'formSubmit', 'oklch(var(--p))', 'SEND'); AllCheckboxesDisable();" class="btn btn-sm btn-warning">CANCEL</div>
+                                <div onclick="Btn('form1', './DB-MANAGEMENT/delete.php', 'formSubmit', 'oklch(var(--er))', 'DELETE SELECTED WORDS');" class="btn btn-sm btn-error">DELETE</div>
+                                <div onclick="Btn('form1', './DB-MANAGEMENT/load.php', 'formSubmit', 'oklch(var(--p))', 'SEND'); AllCheckboxesDisable(); HideSelectedWords('predicatesTxtArea');" class="btn btn-sm btn-warning">CANCEL</div>
                                 <div onclick="Btn('form1', './DB-MANAGEMENT/update.php', 'formSubmit', 'oklch(var(--su))', 'EDIT SELECTED WORDS'); DisplaySelectedWords(words[1], 1, 'predicatesTxtArea', 'predCheck');"class="btn btn-sm btn-success">EDIT</div>
                             </div>
                         </div>

@@ -41,6 +41,9 @@ function DisplaySelectedWords(array, tableCell, outputId, checkboxClass){
     output.value = str;
 }
 
+function HideSelectedWords(outputId){
+    output = document.getElementById(outputId).value = "";
+}
 
 
 
