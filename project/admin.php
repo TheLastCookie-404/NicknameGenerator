@@ -79,7 +79,7 @@
                                 <? foreach($predicates as $predicate) { ?>
                                     <div class="flex justify-between px-3">
                                         <p><?= $predicate[1] ?></p>
-                                        <input name="selectedPredicates[]" value="<?= $predicate[0] ?>" type="checkbox" class="checkbox checkbox-sm checkbox-primary predCheck" />
+                                        <input name="selectedPredicates[]" value="<?= $predicate[0] ?>" type="checkbox" class="checkbox checkbox-sm checkbox-primary predCheck" onclick="DisplaySelectedWords(words[1], 1, 'predicatesTxtArea', 'predCheck');"/>
                                     </div>
                                     <div class="divider my-2"></div>
                                 <? } ?>
@@ -87,7 +87,7 @@
                             <div class="flex justify-start gap-3">
                                 <div onclick="Btn('form1', './DB-MANAGEMENT/delete.php', 'formSubmit', 'oklch(var(--er))', 'DELETE SELECTED WORDS');" class="btn btn-sm btn-error">DELETE</div>
                                 <div onclick="Btn('form1', './DB-MANAGEMENT/load.php', 'formSubmit', 'oklch(var(--p))', 'SEND'); AllCheckboxesDisable(); HideSelectedWords('predicatesTxtArea');" class="btn btn-sm btn-warning">CANCEL</div>
-                                <div onclick="Btn('form1', './DB-MANAGEMENT/update.php', 'formSubmit', 'oklch(var(--su))', 'EDIT SELECTED WORDS'); DisplaySelectedWords(words[1], 1, 'predicatesTxtArea', 'predCheck');"class="btn btn-sm btn-success">EDIT</div>
+                                <div onclick="Btn('form1', './DB-MANAGEMENT/update.php', 'formSubmit', 'oklch(var(--su))', 'EDIT SELECTED WORDS');" class="btn btn-sm btn-success">EDIT</div>
                             </div>
                         </div>
                     </div>
