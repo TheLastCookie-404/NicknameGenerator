@@ -45,6 +45,30 @@ function HideSelectedWords(outputId){
     output = document.getElementById(outputId).value = "";
 }
 
+function saveTheme(themeName){
+    localStorage.setItem('theme', themeName);
+    setDataTheme();
+}
+
+function getTheme(){
+    return localStorage['theme'];
+}
+
+function setDataThemeAttr(){
+    document.querySelector('body').setAttribute('data-theme', getTheme());
+}
+
+function setRadioByStorredTheme(theme, formRadios){
+    for(var i = 0; i < formRadios.length; i++){
+        if(formRadios[i].value == theme){
+            formRadios[i].setAttribute('checked', 'checked');
+        }else if(!theme){
+            formRadios[0].setAttribute('checked', 'checked');
+        }
+    }
+}
+
+
 
 
 // checkboxes.forEach(_checkbox=>{
