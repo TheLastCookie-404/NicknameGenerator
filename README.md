@@ -1,2 +1,2 @@
 # NicknameGenerator
-Generates fun and unusual nicknames
+### Generates fun and unusual nicknames
